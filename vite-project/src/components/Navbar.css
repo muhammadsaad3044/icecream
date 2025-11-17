@@ -1,29 +1,88 @@
-.navbar h3{
-    font-family: "Rowdies", sans-serif;
-    font-size: 40px;
-    color: #d7b89c; /* light creamy brown */
+/* General */
+.navbar {
+  width: 100%;
+  position: fixed; 
+  top: 0;
+  left: 0;
+  padding: 10px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 999;
 }
-.navbar p{
-    font-family: 'Arial', sans-serif;
-    font-size: 18px;
-    color: #d7b89c; /* light creamy brown */
 
+/* Logo */
+.logo {
+  font-family: "Rowdies", sans-serif;
+  font-size: 32px;
+  color: #d7b89c;
 }
-.icon{
-    color: #d7b89c; /* light creamy brown */
 
-
+/* Desktop Navigation */
+.nav-items {
+  display: flex;
+  gap: 40px;
 }
-.navbar{
+
+.nav-items p {
+  font-family: Arial, sans-serif;
+  font-size: 18px;
+  color: #d7b89c;
+  cursor: pointer;
+}
+
+/* Hamburger icon */
+.icon {
+  display: none;
+  color: #d7b89c;
+  cursor: pointer;
+}
+
+/* ------------------------------
+   RESPONSIVE
+--------------------------------*/
+
+/* Tablets + Mobile */
+@media (max-width: 900px) {
+  .nav-items {
+    gap: 25px;
+  }
+}
+
+@media (max-width: 768px) {
+  .icon {
+    display: block;
+  }
+
+  .nav-items {
     position: absolute;
-    top: 10px;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    background: rgba(0,0,0,0.85);
+    flex-direction: column;
+    gap: 25px;
+    padding: 20px 0;
+    text-align: center;
+    display: none;
+  }
+
+  .nav-items.open {
     display: flex;
-    justify-content: center;
-    gap: 240px;
-    align-items: center;
-    padding: 0px 80px;
+  }
+
+  .nav-items p {
+    color: #d7b89c;
+    font-size: 20px;
+  }
 }
-.nav-items{
-    display: flex;
-    gap: 60px;
+
+@media (max-width: 480px) {
+  .logo {
+    font-size: 26px;
+  }
+
+  .nav-items p {
+    font-size: 18px;
+  }
 }
